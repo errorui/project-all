@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="logon.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main" data-aos="fade-up" data-aos-duration="10000" data-aos-delay="4000"
+        data-aos-easing="ease-out-cubic">
+        <div id="image">
+            <img src="2133.jpg" alt="">
+        </div>
+        <div id="info">
+            <i class='bx bx-user bx-flip-horizontal'></i>
+            <form action="" id="form" name="myform" onsubmit=" return validateform()" method="post">
+                <div class="input-container" id="namec">
+                    <i class="fa fa-user icon"></i>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                    <span class="form-error">&nbsp;</span>
+                  </div>
+                  
+                  <div class="input-container" id="numberc">
+                    <i class="bx bxs-phone-call icon"></i>
+                    <input type="number" name="number" id="number" placeholder="Enter your number">
+                    <span class="form-error">&nbsp;</span>
+                  </div>
+                  
+            </form>
+
+            <button type="submit"> submit</button>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        <script>
+            function seterror(id, error) {
+              let element = document.getElementById(id);
+              let errorElement = element.querySelector('.form-error');
+              errorElement.innerHTML = error;
+            }
+          
+            function validateform(event) {
+              event.preventDefault(); // Prevent form submission
+              let returnval = true;
+              let name = document.forms['myform']['name'].value; // Corrected form name reference
+              if (name.length < 3) {
+                seterror('namec', 'Length of name should be greater than 3');
+                returnval = false;
+              }
+              return returnval;
+            }
+          </script>
+          
+          
+              
+        </div>
+    </div>
+
+
+</body>
+
+</html>
